@@ -1,0 +1,39 @@
+/* Non-color tokens: spacing, typography, borders, shadows.
+   These values should be referenced by every other layer. */
+:root {
+    --space-none: 0;
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+
+    --font-family: "Trebuchet MS", Arial, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.5rem;
+    --font-weight-bold: 700;
+    --line-height: 1.5;
+    --line-height-heading: 1.2;
+    --text-decoration-thickness: 0.08em;
+    --text-underline-offset: 0.15em;
+
+    --radius-md: 0.5rem;
+    --radius-full: 9999px;
+    --border-width: 1px;
+    --border-width-accent: 4px;
+    --border-width-focus: 3px;
+    --focus-offset: 2px;
+    --shadow-md: 0 2px 8px rgb(32 42 48 / 12%);
+
+    --card-min-width: 18rem;
+    --card-columns: repeat(auto-fit, minmax(min(100%, var(--card-min-width)), 1fr));
+    --card-padding: calc(var(--space-md) + 1vw);
+
+    --min-button-width: 10em;
+    --preferred-button-width: 16vw;
+    --max-button-width: 20em;
+    --button-width: clamp(var(--min-button-width), var(--preferred-button-width), var(--max-button-width));
+}
