@@ -1,0 +1,14 @@
+/* Utility classes: single-purpose helpers.
+   These live in the last layer so they override components
+   by layer order without needing !important. */
+
+.temple-status.open {
+   background-color: var(--color-primary);
+   color: var(--text-color-dark-background);
+}
+
+.temple-status.construction {
+   background-color: var(--color-accent);
+   color: var(--color-primary);
+}
+
