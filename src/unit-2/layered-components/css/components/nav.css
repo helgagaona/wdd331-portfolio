@@ -1,0 +1,43 @@
+/* Navigation component: .site-nav and its links
+   Style the active link using aria-current. */
+
+/* TODO: Style the navigation */
+.site-nav {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: var(--space-md);
+   padding: var(--space-md);
+   margin-bottom: var(--space-lg);
+   background-color: var(--color-primary);
+   font-size: var(--font-size-md);
+
+   ul {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      margin: var(--space-none);
+      padding: var(--space-none);
+      list-style: none;
+   }
+
+   li {
+      margin-block-start: var(--space-none);
+   }
+
+   a {
+      font-weight: var(--font-weight-bold);
+        color: var(--text-color-dark-background);
+        text-decoration: none;
+
+      &:hover {
+         color: var(--color-accent);
+      }
+
+      &:focus-visible {
+         outline-color: var(--color-accent);
+      }
+   }
+}
