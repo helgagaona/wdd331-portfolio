@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Shadow DOM Demo</title>
+  <style>
+    body {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      font-family: Arial, sans-serif;
+      color: #243047;
+      background: #f4f7fb;
+    }
+
+
+    /* This styles the exposed element inside the component. */
+    simple-card::part(box) {
+      border-color: #bb1bbd;
+      background: #ffffff;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Simple Shadow DOM Demo</h1>
+
+  <simple-card>
+    <p>This paragraph comes from the regular page.</p>
+  </simple-card>
+
+  <template id="simple-card-template">
+    <style>
+
+      div {
+        border: 3px solid #9aa8c4;
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
+      /* This styles the paragraph passed into the slot. */
+      ::slotted(p) {
+        margin: 0;
+        color: #093a16;
+        line-height: 1.6;
+      }
+      p {
+        color: yellow;
+      }
+    </style>
+
+    <div part="box">
+      <slot>Default text appears here.</slot>
+      <p>This is an inside paragraph</p>
+    </div>
+  </template>
+
+  <script>
+    class SimpleCard extends HTMLElement {
+      constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        const template = document.querySelector('#simple-card-template');
+        shadow.append(template.content.cloneNode(true));
+      }
+    }
+
+    customElements.define('simple-card', SimpleCard);
+  </script>
+</body>
+</html>
