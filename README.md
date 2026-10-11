@@ -26,6 +26,9 @@ src                                     # Source folder with all pages
 │   └── custom-properties/             # Unit 1 page and stylesheet
 └── unit-2/
     ├── layered-components/             # Layered components exercise
+    ├── tailwind/                       # Tailwind CSS demo and source stylesheet
+    │   ├── input.css                   # Tailwind input stylesheet
+    │   └── styles.css                  # Generated stylesheet
     └── postcss-demo/                   # Standalone PostCSS demo
         ├── css/                        # Demo stylesheet modules
         ├── dist/styles.css             # Generated demo stylesheet
@@ -53,9 +56,23 @@ npm run build
 To rebuild the demo stylesheet automatically while editing its CSS, run
 `npm run watch` from `unit-2/postcss-demo/`.
 
+## Tailwind CSS
+
+Tailwind CSS 4 and its CLI are installed in the root project. From the
+repository root, build the demo stylesheet with:
+
+```sh
+npm run tailwind:build
+```
+
+To rebuild it automatically while editing the Tailwind demo, run
+`npm run tailwind:watch`. The generated stylesheet is
+`src/unit-2/tailwind/styles.css`.
+
 ## Pages
 
 - [Home](index.html)
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Layered Components](unit-2/layered-components/index.html)
+- [Tailwind CSS](unit-2/tailwind/index.html)
 - [PostCSS Demo](unit-2/postcss-demo/index.html)

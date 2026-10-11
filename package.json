@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "postcss css/main.css --output dist/styles.css",
-    "watch": "postcss css/main.css --output dist/styles.css --watch"
+    "watch": "postcss css/main.css --output dist/styles.css --watch",
+    "tailwind:build": "tailwindcss -i src/unit-2/tailwind/input.css -o src/unit-2/tailwind/styles.css",
+    "tailwind:watch": "tailwindcss -i src/unit-2/tailwind/input.css -o src/unit-2/tailwind/styles.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,9 @@
     "postcss": "^8.5.29",
     "postcss-cli": "^12.0.0",
     "postcss-import": "^17.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
   }
 }
