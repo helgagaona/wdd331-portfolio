@@ -2,35 +2,20 @@
    Focus your work on tokens, base, components, and utilities. */
 
 body {
-    min-height: 100dvh;
     display: flex;
     flex-direction: column;
+    font-family: var(--font-family-sans);
+    background-color: var(--color-bg);
 }
 
 main {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    max-width: 64rem;
-    width: 100%;
-    margin-inline: auto;
-    padding-inline: var(--space-md, 1rem);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-md);
+
 }
 
-main > section {
-    margin-bottom: var(--space-xl, 3rem);
-}
-
-.page-header {
-    max-width: 64rem;
-    width: 100%;
-    margin-inline: auto;
-    padding: var(--space-lg, 2rem) var(--space-md, 1rem);
-}
-
-.page-footer {
-    max-width: 64rem;
-    width: 100%;
-    margin-inline: auto;
-    padding: var(--space-lg, 2rem) var(--space-md, 1rem);
+footer {
+    padding: var(--spacing-lg, 2rem) var(--spacing-md, 1rem);
 }
