@@ -1,0 +1,47 @@
+/* oklch(lightness  chroma  hue) */
+.brand {
+    color: oklch(0.65 0.2 250);
+}
+
+/* color-mix(in <space>, <color> <percentage>, <color>) */
+.tint {
+    background: color-mix(in oklch, #2563eb 80%, white);
+}
+
+:root {
+    --seed: oklch(0.55 0.2 260);
+
+    /* Tints (mix seed with white) */
+    --blue-200: color-mix(in oklch, var(--seed) 30%, white);
+    --blue-300: color-mix(in oklch, var(--seed) 50%, white);
+    --blue-400: color-mix(in oklch, var(--seed) 75%, white);
+
+    /* Base */
+    --blue-500: var(--seed);
+
+    /* Shades (mix seed with black) */
+    --blue-600: color-mix(in oklch, var(--seed) 80%, black);
+    --blue-700: color-mix(in oklch, var(--seed) 60%, black);
+    --blue-800: color-mix(in oklch, var(--seed) 40%, black);
+}
+
+.button {
+    --btn-bg: var(--blue-500);
+    background: var(--btn-bg);
+}
+
+.button:hover {
+    /* 15% darker */
+    background: color-mix(in oklch, var(--btn-bg) 85%, black);
+}
+
+.button:active {
+    /* 30% darker */
+    background: color-mix(in oklch, var(--btn-bg) 70%, black);
+}
+
+.button:disabled {
+    /* Desaturate by mixing toward gray */
+    background: color-mix(in oklch, var(--btn-bg) 40%, oklch(0.75 0 0));
+    cursor: not-allowed;
+}

@@ -4,23 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme-preference.js"></script>
+<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <nav class="site-nav">
-        <ul>
-            <li><a href="https://www.linkedin.com/in/helga-a-gaona" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/helgagaona/wdd331-portfolio" target="_blank">GitHub Source Code</a></li>
-        </ul>
-    </nav>
-    <h1>Helga Gaona</h1>
-    <h2>Course: WDD 331R - Advanced CSS</h2>
-    <p>I'm a web developer passionate about creating interactive and user-friendly websites. This portfolio showcases my work and skills.</p>
-    <div class="cards">
-        <div class="unit">
-            <h1> Unit 1</h1>
-            <div class="card">
+    <header>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/helga-a-gaona" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/helgagaona/wdd331-portfolio" target="_blank">GitHub Source Code</a></li>
+            </ul>
+            <details class="theme-menu">
+                <summary class="theme-control">
+                    <span class="visually-hidden">Color scheme</span>
+                </summary>
+                <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                    <label class="theme-control theme-pick" data-theme-pick="light">
+                        <input name="theme-preference" type="radio" value="light">
+                        <span aria-hidden="true">☀️</span>
+                        <span class="visually-hidden">Light</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="system">
+                        <input name="theme-preference" type="radio" value="system" checked>
+                        <span aria-hidden="true">&#9881;&#65039;</span>
+                        <span class="visually-hidden">System default</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="dark">
+                        <input name="theme-preference" type="radio" value="dark">
+                        <span aria-hidden="true">🌙</span>
+                        <span class="visually-hidden">Dark</span>
+                    </label>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <h1>Helga Gaona</h1>
+        <h2>Course: WDD 331R - Advanced CSS</h2>
+        <p>I'm a web developer passionate about creating interactive and user-friendly websites. This portfolio showcases my work and skills.</p>
+        <div class="cards">
+            <div class="unit">
+                <h1> Unit 1</h1>
+                <div class="card">
                 <h2>Custom Properties</h2>
                 <p>This excercise covers the basics of custom properties in CSS.</p>
                 <a href="./src/unit-1/custom-properties/index.html">See my Ward Activity</a>
@@ -29,11 +55,6 @@
                 <h2>Portfolio PDF Report</h2>
                 <p>This card contains the portfolio PDF Report for Unit 1.</p>
                 <a href="./public/files/U1 - Portfolio.pdf">Portfolio PDF Report</a>
-            </div>
-            <div class="card">
-                <h2>Tailwind</h2>
-                <p>This is my chosen topic of this Unit</p>
-                <a href="https://youtu.be/KJN2AL9P7Kg">See my Tailwind Activity</a>
             </div>
             <div class="card">
                 <h2>Nesting & Custom Properties Report</h2>
@@ -54,6 +75,16 @@
                 <a href="./public/files/U2 - Layered Components.pdf">See my Layered Components PDF Report</a>
             </div>
             <div class="card">
+                <h2>Tailwind</h2>
+                <p>This is my chosen topic of this Unit</p>
+                <a href="https://youtu.be/KJN2AL9P7Kg">See my Tailwind Activity</a>
+            </div>
+            <div class="card">
+                <h2>Tailwind - Demo</h2>
+                <p>This is my chosen topic of this Unit</p>
+                <a href="./src/unit-2/tailwind/tailwind-demo/src/index.html">See my Tailwind Activity</a>
+            </div>
+            <div class="card">
                 <h2>PostCSS Demo</h2>
                 <p>This exercise demonstrates the use of PostCSS for CSS processing.</p>
                 <a href="./src/unit-2/postcss-demo/index.html">See my PostCSS Demo</a>
@@ -68,8 +99,8 @@
                 <p>This is my video explaining the Shadow DOM and ::part() and ::slotted(). </p>
                 <a href="./public/files/U1 - Nested & Custom Properties - Helga Gaona.pdf">See my Nesting & Custom Properties Report</a>
             </div>
+        </div>    
         </div>
-
-    </div>
+    </main>
 </body>
 </html>
