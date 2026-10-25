@@ -1,0 +1,90 @@
+:root {
+
+  --seed: oklch(96.212% 0.10792 122.763); /* l c h */
+  --accent-100: color-mix(in oklch, var(--seed) 80%, black);
+  /* oklch(from var(--seed) calc(l + 0.35) calc(c * 0.3) h); */
+  --accent-300: oklch(from var(--seed) calc(l + 0.15) calc(c * 0.8) h);
+  --accent-500: var(--seed);
+  --accent-700: oklch(from var(--seed) calc(l - 0.18) c h);
+  --accent-900: oklch(from var(--seed) calc(l - 0.35) calc(c * 0.5) h);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: #edf1f7;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.palette-card {
+  width: min(100%, 42rem);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: white;
+  box-shadow: 0 1rem 3rem oklch(from var(--seed) calc(l - 0.2) c h / 0.2);
+}
+
+.palette-card__label {
+  margin: 0 0 0.5rem;
+  color: var(--accent-700);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.palette-card p:not(.palette-card__label) {
+  margin-bottom: 1.5rem;
+  color: #5d687a;
+  line-height: 1.5;
+}
+
+code { font-family: Consolas, monospace; }
+
+.palette-card__swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  min-height: 9rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.swatch {
+  display: grid;
+  place-items: end center;
+  padding: 0.75rem;
+  font-weight: bold;
+}
+
+.swatch--lightest { background: var(--accent-100); }
+.swatch--light { background: var(--accent-300); }
+.swatch--seed { background: var(--accent-500); color: white; }
+.swatch--dark { background: var(--accent-700); color: white; }
+.swatch--darkest { background: var(--accent-900); color: white; }
+
+pre {
+  margin: 1.5rem 0 0;
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #172033;
+  color: #dce7ff;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 36rem) {
+  .palette-card { padding: 1.25rem; }
+  .palette-card__swatches { grid-template-columns: repeat(3, 1fr); }
+  .swatch { min-height: 5rem; }
+}

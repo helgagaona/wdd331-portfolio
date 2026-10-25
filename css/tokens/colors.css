@@ -36,6 +36,7 @@
     --color-link-hover: light-dark(var(--seed-link-hover), oklch(82.283% 0.11966 310.142));
     --color-border: light-dark(var(--seed-border), oklch(0.32 0.02 260));
     --color-border-strong: light-dark(var(--seed-border-strong), oklch(0.38 0.02 260));
+    --color-glass-panel: light-dark(rgb(255 255 255 / 0.35), rgb(20 25 40 / 0.45));
 
     /* Tint the native checkboxes, radios, and range sliders */
     accent-color: var(--color-accent);
@@ -54,6 +55,7 @@
     --shadow-color: light-dark(rgb(0 0 0 / 0.09), rgb(0 0 0 / 0.28));
     --shadow-sm: 0 1px 2px 0 var(--shadow-color);
     --shadow-md: 0 1px 3px 0 var(--shadow-color);
+    --shadow-lg: 0 12px 24px 0 var(--shadow-color);
 }
 
 

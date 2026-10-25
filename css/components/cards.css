@@ -3,7 +3,7 @@
 
 /* TODO: Style the card components */
 
-.cards {
+.cards-home {
    display: grid;
    grid-template-columns: var(--grid-columns);
    gap: var(--spacing-lg);
@@ -35,3 +35,6 @@
    }
 
 }
+
+
+

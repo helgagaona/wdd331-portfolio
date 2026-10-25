@@ -12,5 +12,6 @@
 @import url('components/buttons.css') layer(components);
 @import url('components/forms.css') layer(components);
 @import url('components/nav.css') layer(components);
+@import url('components/effects.css') layer(components);
 
 @import url('utilities/utilities.css') layer(utilities);
