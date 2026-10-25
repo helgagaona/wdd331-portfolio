@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative Color Syntax Demo</title>
+    <link rel="stylesheet" href="relative-color-demo.css" />
+  </head>
+  <body>
+    <!-- One component: a live palette generated from one seed color. -->
+    <main class="palette-card">
+      <p class="palette-card__label">CSS color system</p>
+      <h1>One seed, five colors</h1>
+      <p>
+        Each swatch is created from the same <code>--seed</code> color using
+        relative color syntax.
+      </p>
+
+      <div class="palette-card__swatches">
+       <div class="swatch swatch--lightest">100</div>
+        <div class="swatch swatch--light">300</div>
+        <div class="swatch swatch--seed">500</div>
+        <div class="swatch swatch--dark">700</div>
+        <div class="swatch swatch--darkest">900</div>
+      </div>
+    </main>
+  </body>
+</html>

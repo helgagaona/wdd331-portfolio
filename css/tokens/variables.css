@@ -22,7 +22,7 @@
     --spacing-none: 0;
     --card-padding: var(--spacing-md);
 
-    /* Radii */
+    /* Radius */
     --radius-sm: 4px;
     --radius-md: 6px;
     --radius-lg: 8px;
@@ -32,8 +32,38 @@
     --border-width-accent: 4px;
     --border-width-focus: 3px;
     --focus-offset: 2px;
-    --shadow-md: 0 2px 8px rgb(32 42 48 / 12%);
 
+    /* Shadows */
+    --shadow-sm:  0px 1px 4px rgba(0, 0, 0, 0.16);
+    --shadow-md: 0 2px 8px rgb(32 42 48 / 12%);
+    --icon-drop-shadow:
+        drop-shadow(1px 0 0 currentColor)
+        drop-shadow(-1px 0 0 currentColor)
+        drop-shadow(0 1px 0 currentColor)
+        drop-shadow(0 -1px 0 currentColor)
+        drop-shadow(0 2px 3px currentColor);
+    --text-shadow-hero:
+        0 1px 2px oklch(0.12 0.02 260 / 0.9),
+        0 2px 4px oklch(0.12 0.02 260 / 0.6);
+
+    /* Visual effects */
+    --hero-height: 500px;
+    --card-image-height: 500px;
+    --card-lift: -6px;
+    --glass-section-height: 25rem;
+    --glass-panel-max-width: 40rem;
+    --glass-backdrop-filter: blur(12px) saturate(1.5);
+    --shape-image-width: 20rem;
+
+    /* Gradients */
+    --color-wash: oklch(0.45 0.2 260);
+    --blend-mode: multiply;
+    --vignette-overlay: radial-gradient(
+            ellipse at center,
+            transparent 40%,
+            light-dark(rgb(0 0 0 / 0.55), rgb(0 0 0 / 0.72)) 100%
+        );
+        
     /* Transitions */
     --transition-base: 0.2s ease;
     
