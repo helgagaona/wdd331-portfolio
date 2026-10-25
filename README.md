@@ -72,7 +72,10 @@ To rebuild it automatically while editing the Tailwind demo, run
 ## Pages
 
 - [Home](index.html)
-- [Custom Properties and Nesting](unit-1/custom-properties/index.html)
-- [Layered Components](unit-2/layered-components/index.html)
-- [Tailwind CSS](unit-2/tailwind/index.html)
-- [PostCSS Demo](unit-2/postcss-demo/index.html)
+- [Custom Properties and Nesting](src/unit-1/custom-properties/index.html)
+- [Layered Components](src/unit-2/layered-components/index.html)
+- [Tailwind CSS](src/unit-2/tailwind/index.html)
+- [PostCSS Demo](src/unit-2/postcss-demo/index.html)
+- [OKLCH](src/unit-3/oklch/index.html)
+- [Relative Color Syntax](src/unit-3/relative-color-syntax/relative-color-demo.html)
+- [Visual Effects](src/unit-3/visual-effects/index.html)
