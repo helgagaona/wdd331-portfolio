@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>shape-outside demo</title>
+<style>
+  :root {
+    --bg: #f6f7f4;
+    --text: #1f2a24;
+    --accent: #2f6f5e;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16201b; --text: #e6ece8; --accent: #7cc4ae; }
+  }
+
+  body {
+    margin: 0;
+    padding: 2rem 1rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-top: 0; }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .shape {
+    float: left;                      
+    width: 220px;
+    height: 220px;
+    margin: 0 1.5rem 0.5rem 0;
+    background: var(--accent);
+    clip-path: circle(50%);            
+    shape-outside: circle(50%);        
+    shape-margin: 1rem;                
+  }
+  .shape-d {
+    float: left;                      
+    width: 220px;
+    height: 220px;
+    margin: 0 1.5rem 0.5rem 0;
+    background: var(--accent);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);            
+    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);        
+    shape-margin: 1rem;                
+  }
+  .shape-e {
+    float: left;                      
+    width: 220px;
+    height: 220px;
+    margin: 0 1.5rem 0.5rem 0;
+    background: var(--accent);
+    clip-path: ellipse(50% 40%);            
+    shape-outside: ellipse(50% 40%);        
+    shape-margin: 1rem;                
+  }
+
+  /* Other shape functions:
+
+     polygon (diamond):
+       clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+       shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+
+     ellipse:
+       clip-path: ellipse(50% 40%);
+       shape-outside: ellipse(50% 40%);
+  */
+
+
+  @media (max-width: 500px) {
+    .shape {
+      float: none;
+      shape-outside: none;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Text that follows the curve</h1>
+  <div>
+      <div class="shape" role="img" aria-label="Decorative circle"></div>
+      <p>Typography and layout have always been intertwined. In print, designers wrap body text around images, pull quotes, and decorative elements to create rhythm on the page. The web inherited rectangular boxes from its document roots, and for years text could only wrap around sharp, right-angled edges. The shape-outside property changes that by letting inline content follow curves, angles, and organic contours.</p>
+    </div>
+      <div><div class="shape-d" role="img" aria-label="Decorative circle"></div>
+      <p>The circle on the left is a single floated element. Without shape-outside, the text would hug the invisible corners of its square box. With shape-outside: circle(50%), the browser treats the float area as a circle, so each line of text shortens and lengthens to follow the edge. Resize the window and watch the wrap recalculate in real time. Below 500px wide, the float turns off and the circle stacks above the text so you never end up with one-word lines.</p>
+    </div>
+    <div>
+      <div class="shape-e" role="img" aria-label="Decorative circle"></div>
+      <p>Grid and flexbox place blocks on the page, but they cannot make words flow around a non-rectangular obstacle. That is the one job float still does best, and shape-outside gives it a far more interesting path to follow than a plain rectangle.</p>
+  </div>  
+</main>
+</body>
+</html>
