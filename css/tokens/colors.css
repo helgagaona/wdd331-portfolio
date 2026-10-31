@@ -71,6 +71,3 @@ html:has(input[name='theme-preference'][value='dark']:checked) {
         color-scheme: dark;
     }
 }
-:root,
-
-}
