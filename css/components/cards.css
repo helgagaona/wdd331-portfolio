@@ -22,8 +22,10 @@
          border-radius: var(--radius-md);
          padding: var(--card-padding);
          line-height: var(--line-height);
+         font-size: var(--font-size-md);
          a {
             color: var(--color-link);
+            font-size: var(--font-size-md);
             &:hover {
                color: var(--color-link-hover);
             }
