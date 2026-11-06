@@ -11,11 +11,17 @@ section {
     padding-bottom: 24px;
 
     /*
-      "overflow: hidden" broke the sticky headings (<h2>) because each section
-      became an not desired scrolling boundary. I changed it to be "overflow: clip"
-      to keep the clipping effect without creating a scroll container.
+      "overflow: hidden" broke the sticky headings because each section
+      became an unwanted scrolling boundary. I changed it to "overflow: clip"
+      so the oversized image is clipped without creating a scroll container.
     */
     overflow: clip;
+}
+
+.section-decoration {
+    height: 110px;
+    background-color: rgb(181, 12, 122);
+    border-radius: 10px;
 }
 
 h2 {
@@ -24,4 +30,10 @@ h2 {
     z-index: 1;
     padding: 12px;
     background: #e8eefa;
+    width: fit-content;
+}
+
+img {
+    width: 1200px;
+    max-width: none;
 }
