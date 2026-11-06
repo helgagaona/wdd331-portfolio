@@ -79,3 +79,7 @@ To rebuild it automatically while editing the Tailwind demo, run
 - [OKLCH](src/unit-3/oklch/index.html)
 - [Relative Color Syntax](src/unit-3/relative-color-syntax/relative-color-demo.html)
 - [Visual Effects](src/unit-3/visual-effects/index.html)
+- [Editorial Layout](src/unit-4/grid-layouts/editorial.html)
+- [Responsive Card Grid](src/unit-4/grid-layouts/cards.html)
+- [Container Query Demo](src/unit-4/advanced/container-demo.html)
+- [Sticky Section Headers](src/unit-4/advanced/sticky-demo.html)

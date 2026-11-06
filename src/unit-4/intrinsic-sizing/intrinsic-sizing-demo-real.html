@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intrinsic Sizing Keywords</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .demo {
+      display: grid;
+      grid-template-columns: min-content max-content fit-content(180px);
+      gap: 1rem;
+      width: 100%;
+      min-width: 350px;
+      max-width: 700px;
+      min-height: 180px;
+      resize: horizontal;
+      overflow: auto;
+      margin: 3rem auto;
+      align-items: start;
+      padding: 1rem;
+      border: 2px dashed #999;
+    }
+
+    .box {
+      padding: 1rem;
+      border: 3px solid #2868a8;
+      background: #dcecff;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .box p {
+      margin-bottom: 0;
+      font-weight: normal;
+    }
+
+    .resize-note {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+      text-align: center;
+    }
+
+    .min-box {
+      overflow-wrap: normal;
+    }
+
+    /* .max-box {
+      white-space: nowrap; */
+    /* } */
+
+    /* .fit-box {
+      overflow-wrap: anywhere;
+    } */
+
+    code {
+      color: #542bb8;
+    }
+
+    @media (max-width: 650px) {
+      .demo {
+        grid-template-columns: 1fr;
+      }
+
+      .max-box {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Intrinsic Sizing Keywords</h1>
+
+  <p class="resize-note">Resize the dashed container from its bottom-right corner.</p>
+
+  <div class="demo">
+    <div class="box min-box">
+      <code>min-content</code>
+      <p>Responsive plant care information</p>
+    </div>
+
+    <div class="box max-box">
+      <code>max-content</code>
+      <p>Responsive plant care information</p>
+    </div>
+
+    <div class="box fit-box">
+      <code>fit-content(180px)</code>
+      <p>Responsive plant care information</p>
+    </div>
+  </div>
+</body>
+</html>

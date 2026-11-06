@@ -1,0 +1,27 @@
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+
+    /*
+      "overflow: hidden" broke the sticky headings (<h2>) because each section
+      became an not desired scrolling boundary. I changed it to be "overflow: clip"
+      to keep the clipping effect without creating a scroll container.
+    */
+    overflow: clip;
+}
+
+h2 {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 12px;
+    background: #e8eefa;
+}

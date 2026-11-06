@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intrinsic Sizing Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      color: #222;
+      background: #f4f6f8;
+    }
+    section {
+      margin: 2rem 0;
+      padding: 1.25rem;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .controls { margin: 1rem 0; }
+    select, input { margin-left: 0.5rem; padding: 0.4rem; }
+    
+    .demo {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      border: 1px solid #aaa;
+    }
+    .fixed-demo { grid-template-columns: minmax(120px, 1fr) 1fr; }
+    .safe-demo { grid-template-columns: minmax(min-content, 1fr) 1fr; }
+    .max-demo { grid-template-columns: max-content 1fr; }
+    .fit-demo { grid-template-columns: fit-content(180px) 1fr; }
+    .cell {
+      min-width: 0;
+      padding: 0.75rem;
+      border-bottom: 1px solid #ccc;
+    }
+    .demo > .cell:nth-last-child(-n + 2) { border-bottom: 0; }
+    .label {
+      color: #124b86;
+      background: #dcecff;
+      font-weight: bold;
+      border-right: 1px solid #80b4ef;
+    }
+    .value { background: #eeeeee; }
+    code {
+      padding: 0.15rem 0.3rem;
+      color: #542bb8;
+      background: #eee8ff;
+      border-radius: 3px;
+    }
+    .css-code {
+      padding: 0.75rem;
+      color: white;
+      background: #222;
+      border-radius: 4px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 650px) {
+      .comparison { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Intrinsic Sizing Keywords</h1>
+  <p>Change the controls and watch how the first grid column responds to its content.</p>
+
+  <section>
+    <h2>1. Fixed minimum vs. intrinsic minimum</h2>
+    <p>Both grids use <code>1fr</code>, but the second grid uses the content as its minimum.</p>
+
+    <div class="controls">
+      <label for="floor-label">Change the label:</label>
+      <select id="floor-label">
+        <option>Phone Number</option>
+        <option>Email</option>
+        <option>Supercalifragilistic</option>
+      </select>
+    </div>
+
+    <div class="comparison">
+      <div>
+        <h3>Fixed pixel floor</h3>
+        <div class="demo fixed-demo">
+          <div class="cell label" id="fixed-output">Phone Number</div>
+          <div class="cell value">Value column</div>
+        </div>
+        <p class="css-code">minmax(120px, 1fr) 1fr</p>
+      </div>
+      <div>
+        <h3>Intrinsic content floor</h3>
+        <div class="demo safe-demo">
+          <div class="cell label" id="safe-output">Phone Number</div>
+          <div class="cell value">Value column</div>
+        </div>
+        <p class="css-code">minmax(min-content, 1fr) 1fr</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. <code>min-content</code></h2>
+    <p>The column becomes as small as possible and wraps content when needed.</p>
+    <div class="demo">
+      <div class="cell label">Name</div>
+      <div class="cell value">Alex Chen</div>
+      <div class="cell label">Phone Number</div>
+      <div class="cell value">WDD 331</div>
+      <div class="cell label">Qty</div>
+      <div class="cell value">2</div>
+    </div>
+    <p class="css-code">grid-template-columns: min-content 1fr;</p>
+  </section>
+
+  <section>
+    <h2>3. <code>max-content</code></h2>
+    <p>The column grows enough to keep short content on one line.</p>
+
+    <div class="controls">
+      <label for="max-label">Change the badge:</label>
+      <select id="max-label">
+        <option>In Review</option>
+        <option>OK</option>
+        <option>Pending Approval</option>
+        <option>Awaiting Final Sign-Off</option>
+      </select>
+    </div>
+
+    <div class="demo max-demo">
+      <div class="cell label">Done</div>
+      <div class="cell value">Publish Unit Index</div>
+      <div class="cell label" id="max-output">In Review</div>
+      <div class="cell value">Review Grid Prove Rubric</div>
+      <div class="cell label">Draft</div>
+      <div class="cell value">Update Color Token Sheet</div>
+    </div>
+    <p class="css-code">grid-template-columns: max-content 1fr;</p>
+  </section>
+
+  <section>
+    <h2>4. <code>fit-content()</code></h2>
+    <p>The column grows with the content, but stops at a maximum width.</p>
+
+    <div class="controls">
+      <label for="cap">Change the cap:</label>
+      <input id="cap" type="range" min="90" max="250" value="180" />
+      <span id="cap-output">180px</span>
+    </div>
+
+    <div class="demo fit-demo" id="fit-demo">
+      <div class="cell label">Grid</div>
+      <div class="cell value">Short tag</div>
+      <div class="cell label">Flexbox</div>
+      <div class="cell value">Medium tag</div>
+      <div class="cell label">Intrinsic Sizing Keywords</div>
+      <div class="cell value">Long tag wraps when the cap is low</div>
+    </div>
+    <p class="css-code" id="fit-code">grid-template-columns: fit-content(180px) 1fr;</p>
+  </section>
+
+  <section>
+    <h2>5. Portfolio example</h2>
+    <p>A project information layout can use intrinsic sizing instead of guessed widths.</p>
+    <p class="css-code">.project-info { grid-template-columns: max-content 1fr; }</p>
+  </section>
+
+  <script>
+    const floorSelect = document.querySelector("#floor-label");
+    const fixedOutput = document.querySelector("#fixed-output");
+    const safeOutput = document.querySelector("#safe-output");
+
+    floorSelect.addEventListener("change", () => {
+      fixedOutput.textContent = floorSelect.value;
+      safeOutput.textContent = floorSelect.value;
+    });
+
+    const maxSelect = document.querySelector("#max-label");
+    const maxOutput = document.querySelector("#max-output");
+
+    maxSelect.addEventListener("change", () => {
+      maxOutput.textContent = maxSelect.value;
+    });
+
+    const capSlider = document.querySelector("#cap");
+    const capOutput = document.querySelector("#cap-output");
+    const fitDemo = document.querySelector("#fit-demo");
+    const fitCode = document.querySelector("#fit-code");
+
+    capSlider.addEventListener("input", () => {
+      const cap = `${capSlider.value}px`;
+      capOutput.textContent = cap;
+      fitDemo.style.gridTemplateColumns = `fit-content(${cap}) 1fr`;
+      fitCode.textContent = `grid-template-columns: fit-content(${cap}) 1fr;`;
+    });
+  </script>
+</body>
+</html>
