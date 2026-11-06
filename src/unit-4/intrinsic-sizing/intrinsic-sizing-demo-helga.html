@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Intrinsic Sizing Demo</title>
+<style>
+  /* Lets me drag the corner to resize each box */
+  .box {
+    resize: horizontal;
+    overflow: auto;
+    border: 2px dashed gray;
+    margin-bottom: 20px;
+  }
+
+  .grid {
+    display: grid;
+  }
+
+  .grid div:first-child {
+    background: lightblue;
+  }
+
+  .grid div:last-child {
+    background: lightgray;
+  }
+  .regular {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .column-1 {
+      background-color: lightblue;
+    }
+    .column-2 {
+      background-color: lightgray;
+    }
+  }
+
+  /* Only the first column changes */
+  .min { grid-template-columns: min-content 1fr; }
+  .max { grid-template-columns: max-content 1fr; }
+  .fit { grid-template-columns: fit-content(10rem) 1fr; }
+  .px  { grid-template-columns: minmax(6rem, 1fr) 1fr; }
+  .int { grid-template-columns: minmax(min-content, 1fr) 1fr; }
+</style>
+</head>
+<body>
+
+  <h2>content</h2>
+  <div class="box">
+    <div class="regular">
+      <div class="column-1">
+        <div>Extraordinarily long label</div>
+      </div>
+      <div class="column-2">
+        <div>1fr column</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>min-content</h2>
+  <div class="box">
+    <div class="grid min">
+      <div>Extraordinarily long label</div>
+      <div>1fr column</div>
+    </div>
+  </div>
+
+  <h2>max-content</h2>
+  <div class="box">
+    <div class="grid max">
+      <div>Extraordinarily long label</div>
+      <div>1fr column</div>
+    </div>
+  </div>
+
+  <h2>fit-content(10rem)</h2>
+  <div class="box">
+    <div class="grid fit">
+      <div>Extraordinarily long label</div>
+      <div>1fr column</div>
+    </div>
+  </div>
+
+  <h2>Pixel floor vs. min-content floor</h2>
+  <div class="box">
+    <div class="grid px">
+      <div>Supercalifragilistic</div>
+      <div>minmax(6rem, 1fr)</div>
+    </div>
+    <div class="grid int">
+      <div>Supercalifragilistic</div>
+      <div>minmax(min-content, 1fr)</div>
+    </div>
+  </div>
+
+</body>
+</html>

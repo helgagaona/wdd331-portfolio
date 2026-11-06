@@ -1,0 +1,39 @@
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 16px;
+}
+
+.sidebar .card-container {
+    max-width: 320px;
+}
+
+.card-container {
+    container-type: inline-size;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.card-image {
+    min-height: 128px;
+    background: #d7c6f5;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+@container (min-width: 512px) {
+    .card {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .card-image {
+        height: 100%;
+    }
+}
