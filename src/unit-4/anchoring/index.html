@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Anchor Positioning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>CSS Anchor Positioning</h1>
+    <p>Hover over the button.</p>
+
+    <button class="button">Hover me</button>
+
+    <div class="tooltip">
+      This tooltip is connected to the button with CSS.
+    </div>
+
+    <button popovertarget="my-tooltip" anchor-name="--trigger">
+      Open tooltip
+    </button>
+
+    <div id="my-tooltip" popover>
+      This is a popover.
+    </div>
+  </main>
+</body>
+</html>

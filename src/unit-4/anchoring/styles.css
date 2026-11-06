@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+  background: #f4f1ea;
+  color: #29251f;
+  text-align: center;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 6px;
+  background: #5e4b3b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tooltip {
+  /* margin: 8px; */
+  margin-left: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  background: #29251f;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button {
+  anchor-name: --my-button;
+}
+
+/* .tooltip {
+  position: absolute;
+  position-anchor: --my-button;
+
+  /* position-area: right; */
+
+  /* left: anchor(right);
+  top: anchor(center);
+  translate: 0 -50%;
+} */
+
+.button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.tooltip {
+  position: fixed;
+  position-anchor: --my-button;
+  position-area: bottom;
+  position-try-fallbacks: flip-block;
+  margin: 8px;
+}
+
+#my-tooltip {
+  position: fixed;
+  position-anchor: --trigger;
+}
+
+.button:hover + .tooltip,
+.button:focus + .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
