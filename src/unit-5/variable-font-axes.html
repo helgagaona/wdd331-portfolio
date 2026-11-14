@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Roboto Flex Variable Font Demo</title>
+
+
+  <style>
+
+    @font-face {
+        font-family: "Roboto Flex";
+        src: url("../../fonts/RobotoFlex-VF.ttf") format("truetype");
+        font-weight: 100 1000;
+        font-stretch: 25% 151%;
+        font-style: oblique -10deg 10deg;
+        font-display: swap;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      background: #f3f0ff;
+      color: #29263d;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #6954c8;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 20px;
+      border-radius: 12px;
+      background: white;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 15px;
+      box-sizing: border-box;
+      resize: vertical;
+      border: none;
+      border-radius: 8px;
+      background: #29263d;
+      color: white;
+      font: 14px/1.5 monospace;
+    }
+
+    .preview {
+      display: grid;
+      min-height: 300px;
+      place-items: center;
+      border-radius: 8px;
+      background: #eee9ff;
+    }
+
+    #demoText {
+        font-family: "Roboto Flex", sans-serif;
+        font-size: 3rem;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-style: normal;
+        font-variation-settings: "GRAD" 150;
+        color: #6954c8;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 6px;
+      background: #6954c8;
+      color: white;
+      cursor: pointer;
+    }
+
+    .info {
+      margin-top: 20px;
+    }
+
+    .animated-text {
+      font-family: "Roboto Flex", sans-serif;
+      font-size: 2rem;
+      font-weight: 300;
+      text-align: center;
+      animation: changeWeight 3s infinite alternate;
+    }
+
+    @keyframes changeWeight {
+      from {
+         font-variation-settings: "GRAD" -200;
+      }
+
+      to {
+        font-variation-settings: "GRAD" 550;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animated-text {
+        animation: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Roboto Flex Variable Font Demo</h1>
+
+    <p>
+      Edit the CSS code and watch the text change in the preview.
+      Try changing <code>font-weight</code>,
+      <code>font-stretch</code>, and
+      <code>font-style</code>.
+    </p>
+
+    <div class="layout">
+      <section class="panel">
+        <h2>CSS Code</h2>
+
+        <textarea id="cssEditor">#demoText {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variation-settings: "GRAD" 0;
+  color: #6954c8;
+}
+</textarea>
+
+        <button id="resetButton">Reset Code</button>
+      </section>
+
+      <section class="panel">
+        <h2>Live Preview</h2>
+
+        <div class="preview">
+          <div id="demoText">Variable Type</div>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel info">
+      <h2>Loading One Variable Font File</h2>
+
+      <pre><code>@font-face {
+  font-family: "Roboto Flex";
+  src: url("/fonts/RobotoFlex-VariableFont.ttf")
+    format("truetype");
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+}</code></pre>
+    </section>
+
+    <section class="panel info">
+      <h2>Custom Axes</h2>
+
+      <p>
+        Custom axes do not have their own CSS property, so they use
+        <code>font-variation-settings</code>.
+      </p>
+
+      <pre><code>font-variation-settings:
+  "GRAD" 50,
+  "XTRA" 500;</code></pre>
+    </section>
+
+    <section class="panel info">
+      <h2>Animated Font Axis</h2>
+
+      <div class="animated-text">Animated Roboto Flex</div>
+
+      <pre><code>@keyframes changeWeight {
+  from {
+    font-weight: 300;
+  }
+
+  to {
+    font-weight: 900;
+  }
+}</code></pre>
+    </section>
+  </main>
+
+  <style id="liveStyles"></style>
+
+  <script>
+    const editor = document.querySelector("#cssEditor");
+    const liveStyles = document.querySelector("#liveStyles");
+    const resetButton = document.querySelector("#resetButton");
+
+    const originalCode = editor.value;
+
+    function updatePreview() {
+      liveStyles.textContent = editor.value;
+    }
+
+    editor.addEventListener("input", updatePreview);
+
+    resetButton.addEventListener("click", () => {
+      editor.value = originalCode;
+      updatePreview();
+    });
+
+    updatePreview();
+  </script>
+</body>
+</html>
