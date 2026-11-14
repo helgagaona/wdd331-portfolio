@@ -37,6 +37,14 @@ src                                     # Source folder with all pages
         └── postcss.config.js           # PostCSS plugin configuration
 ```
 
+## Typography
+
+Typography tokens live in `css/tokens/variables.css`, including the numbered
+fluid type scale and semantic body, caption, and heading sizes and line heights.
+Primary `h1` headings use Lobster as an accent; other headings use DM Sans.
+Both fonts load from Google Fonts with `display=swap`; heading and body tokens
+include cursive and system sans-serif fallback stacks.
+
 ## Build
 
 The PostCSS setup is located in `unit-2/postcss-demo/`. It bundles CSS

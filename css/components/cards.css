@@ -21,8 +21,8 @@
          border-top: var(--border-width-accent) solid var(--color-accent);
          border-radius: var(--radius-md);
          padding: var(--card-padding);
-         line-height: var(--line-height);
-         font-size: var(--font-size-md);
+         line-height: var(--line-height-body);
+         font-size: var(--font-size-body);
 
          .card-action {
             display: grid;
@@ -33,7 +33,7 @@
 
             a {
                color: var(--color-link);
-               font-size: var(--font-size-md);
+               font-size: var(--font-size-body);
                &:hover {
                   color: var(--color-link-hover);
                }
@@ -44,7 +44,8 @@
                color: var(--header-text);
                background-color: var(--color-accent-hover);
                border-radius: var(--radius-full);
-               font-size: var(--font-size-sm);
+               font-size: var(--font-size-caption);
+               line-height: var(--line-height-caption);
             }
          }
 
