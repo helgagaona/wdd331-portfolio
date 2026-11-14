@@ -65,6 +65,9 @@ main {
 #my-tooltip {
   position: fixed;
   position-anchor: --trigger;
+  inset: auto;
+  position-area: top;
+  margin-bottom: 8px;
 }
 
 .button:hover + .tooltip,
