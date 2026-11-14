@@ -21,6 +21,7 @@ every push to main.
 │   ├── layout/                        # Page layout
 │   ├── tokens/                        # Colors and design variables
 │   └── utilities/                     # Utility classes
+├── fonts/                             # Self-hosted Roboto Flex variable font and license
 src                                     # Source folder with all pages
 ├── unit-1/
 │   └── custom-properties/             # Unit 1 page and stylesheet
@@ -44,6 +45,8 @@ fluid type scale and semantic body, caption, and heading sizes and line heights.
 Primary `h1` headings use Lobster as an accent; other headings use DM Sans.
 Both fonts load from Google Fonts with `display=swap`; heading and body tokens
 include cursive and system sans-serif fallback stacks.
+The variable-font demo self-hosts Roboto Flex in `fonts/` and uses its variable
+weight, width, and slant axes; its font license is included alongside the file.
 
 ## Build
 
@@ -91,3 +94,5 @@ To rebuild it automatically while editing the Tailwind demo, run
 - [Responsive Card Grid](src/unit-4/grid-layouts/cards.html)
 - [Container Query Demo](src/unit-4/advanced/container-demo.html)
 - [Sticky Section Headers](src/unit-4/advanced/sticky-demo.html)
+- [Unit 5: Variable Font Axes](src/unit-5/index.html)
+- [Variable Font Axes Demo](src/unit-5/variable-font-axes.html)
