@@ -156,7 +156,8 @@ every push to main.
         ├── resume.html
         ├── resume.css
         ├── variable-font-axes.html
-        └── variable-font-axes.css
+        ├── variable-font-axes.css
+        └── form-controls.html
 ```
 
 ## Typography
@@ -225,4 +226,5 @@ To rebuild it automatically while editing the Tailwind demo, run
 - [Intrinsic Sizing](src/unit-4/intrinsic-sizing/intrinsic-sizing-demo-final-final.html)
 - [Unit 5: Variable Font Axes](src/unit-5/index.html)
 - [Variable Font Axes Demo](src/unit-5/variable-font-axes.html)
+- [Form Control Styling Demo](src/unit-5/form-controls.html)
 - [Resume](src/unit-5/resume.html) — includes print styles in [resume.css](src/unit-5/resume.css) and a styled contact form.
