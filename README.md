@@ -13,29 +13,150 @@ every push to main.
 
 ## Project Structure
 ```
-├── index.html                         # Portfolio home page
-├── css/                               # Portfolio CSS modules
-│   ├── main.css                       # Imports modules in cascade layers
-│   ├── base/                          # Reset and element styles
-│   ├── components/                    # Cards, buttons, forms, and navigation
-│   ├── layout/                        # Page layout
-│   ├── tokens/                        # Colors and design variables
-│   └── utilities/                     # Utility classes
-├── fonts/                             # Self-hosted Roboto Flex variable font and license
-src                                     # Source folder with all pages
-├── unit-1/
-│   └── custom-properties/             # Unit 1 page and stylesheet
-└── unit-2/
-    ├── layered-components/             # Layered components exercise
-    ├── tailwind/                       # Tailwind CSS demo and source stylesheet
-    │   ├── input.css                   # Tailwind input stylesheet
-    │   └── styles.css                  # Generated stylesheet
-    └── postcss-demo/                   # Standalone PostCSS demo
-        ├── css/                        # Demo stylesheet modules
-        ├── dist/styles.css             # Generated demo stylesheet
-        ├── images/                     # Demo images
-        ├── package.json                # Demo build scripts and dependencies
-        └── postcss.config.js           # PostCSS plugin configuration
+├── README.md
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── dist/
+│   └── styles.css
+├── css/
+│   ├── main.css
+│   ├── base/
+│   │   ├── elements.css
+│   │   └── reset.css
+│   ├── components/
+│   │   ├── buttons.css
+│   │   ├── cards.css
+│   │   ├── effects.css
+│   │   ├── forms.css
+│   │   ├── nav.css
+│   │   └── units.css
+│   ├── js/
+│   │   └── theme-preference.js
+│   ├── layout/
+│   │   └── primary.css
+│   ├── tokens/
+│   │   ├── colors.css
+│   │   └── variables.css
+│   └── utilities/
+│       └── utilities.css
+├── fonts/
+│   ├── OFL.txt
+│   └── RobotoFlex-VF.ttf
+├── public/
+│   └── files/
+│       ├── U1 - Nested & Custom Properties - Helga Gaona.pdf
+│       ├── U1 - Portfolio.pdf
+│       ├── U2 - Build.pdf
+│       ├── U2 - Layered Components.pdf
+│       └── large-image.avif
+└── src/
+    ├── unit-1/
+    │   ├── unit-1.html
+    │   └── custom-properties/
+    │       ├── index.html
+    │       └── styles.css
+    ├── unit-2/
+    │   ├── unit-2.html
+    │   ├── layered-components/
+    │   │   ├── index.html
+    │   │   └── css/
+    │   │       ├── main.css
+    │   │       ├── base/
+    │   │       │   ├── elements.css
+    │   │       │   └── reset.css
+    │   │       ├── components/
+    │   │       │   ├── buttons.css
+    │   │       │   ├── cards.css
+    │   │       │   ├── forms.css
+    │   │       │   ├── nav.css
+    │   │       │   └── temples.css
+    │   │       ├── layout/
+    │   │       │   └── primary.css
+    │   │       ├── tokens/
+    │   │       │   ├── colors.css
+    │   │       │   └── variables.css
+    │   │       └── utilities/
+    │   │           └── utilities.css
+    │   ├── part-and-slotted/
+    │   │   └── index.html
+    │   ├── postcss-demo/
+    │   │   ├── index.html
+    │   │   ├── .gitignore
+    │   │   ├── package.json
+    │   │   ├── package-lock.json
+    │   │   ├── postcss.config.js
+    │   │   ├── dist/styles.css
+    │   │   ├── images/
+    │   │   │   ├── salt-lake-temple.webp
+    │   │   │   └── washington-dc-temple.webp
+    │   │   └── css/
+    │   │       ├── main.css
+    │   │       ├── base/
+    │   │       │   ├── elements.css
+    │   │       │   └── reset.css
+    │   │       ├── components/
+    │   │       │   └── card.css
+    │   │       ├── layout/
+    │   │       │   ├── chrome.css
+    │   │       │   └── primary.css
+    │   │       ├── tokens/
+    │   │       │   ├── colors.css
+    │   │       │   └── variables.css
+    │   │       └── utilities/
+    │   │           └── utilities.css
+    │   └── tailwind/
+    │       ├── index.html
+    │       ├── input.css
+    │       ├── styles.css
+    │       └── tailwind-demo/
+    │           ├── dist/output.css
+    │           └── src/
+    │               ├── index.html
+    │               └── input.css
+    ├── unit-3/
+    │   ├── unit-3.html
+    │   ├── oklch/
+    │   │   ├── index.html
+    │   │   └── styles.css
+    │   ├── relative-color-syntax/
+    │   │   ├── relative-color-demo.html
+    │   │   └── relative-color-demo.css
+    │   ├── shape-outside/
+    │   │   ├── index.html
+    │   │   ├── shape-outside-demo.html
+    │   │   └── Teaching Video Report - shape outside.pdf
+    │   └── visual-effects/
+    │       └── index.html
+    ├── unit-4/
+    │   ├── unit-4.html
+    │   ├── advanced/
+    │   │   ├── container-demo.html
+    │   │   ├── container-demo.css
+    │   │   ├── sticky-demo.html
+    │   │   └── sticky-demo.css
+    │   ├── anchoring/
+    │   │   ├── index.html
+    │   │   └── styles.css
+    │   ├── grid-layouts/
+    │   │   ├── cards.html
+    │   │   ├── cards.css
+    │   │   ├── editorial.html
+    │   │   └── editorial.css
+    │   └── intrinsic-sizing/
+    │       ├── intrinsic-sizing-demo.html
+    │       ├── intrinsic-sizing-demo-real.html
+    │       ├── intrinsic-sizing-demo-final.html
+    │       ├── intrinsic-sizing-demo-final-final.html
+    │       ├── intrinsic-sizing-demo-helga.html
+    │       └── teachinv video report intrinsitc.pdf
+    └── unit-5/
+        ├── index.html
+        ├── resume.html
+        ├── resume.css
+        ├── variable-font-axes.html
+        └── variable-font-axes.css
 ```
 
 ## Typography
