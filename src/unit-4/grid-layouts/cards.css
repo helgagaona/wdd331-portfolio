@@ -26,7 +26,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-md);
-        padding: var(--card-padding);
+        padding: var(--spacing-md);
     }
 
     h2 {
