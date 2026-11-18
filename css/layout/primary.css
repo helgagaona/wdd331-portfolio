@@ -17,5 +17,5 @@ main {
 }
 
 footer {
-    padding: var(--spacing-lg, 2rem) var(--spacing-md, 1rem);
+    padding: var(--spacing-lg) var(--spacing-md);
 }

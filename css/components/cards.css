@@ -20,7 +20,7 @@
          border: var(--border-width) solid var(--color-border);
          border-top: var(--border-width-accent) solid var(--color-accent);
          border-radius: var(--radius-md);
-         padding: var(--card-padding);
+         padding: var(--spacing-md);
          line-height: var(--line-height-body);
          font-size: var(--font-size-body);
 
